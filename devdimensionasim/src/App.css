@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Basier Circle";
+  src: url("/fonts/BasierCircle-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Basier Circle", sans-serif;
+}
+
+
