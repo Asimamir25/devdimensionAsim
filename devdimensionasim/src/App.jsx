@@ -1,24 +1,33 @@
 import React from "react";
-import './App.css'
-import Infobar from "./components/Infobar";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
-import OurLeads from "./components/OurLeads";
-import Pricing from "./components/Pricing";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Users from './pages/Users';
+import './App.css';
 
 const App = () => {
   return (
-    <div>
-      <Infobar/>
-      <Navbar/>
-      <Hero/>
-      <HowItWorks/>
-      <OurLeads/>
-      <Pricing/>
-      <Footer/>
-    </div>
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/users"
+            element={
+              <ProtectedRoute>
+                <Users />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
 };
 

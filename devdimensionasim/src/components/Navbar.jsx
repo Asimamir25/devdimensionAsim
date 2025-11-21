@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import Trust from "../assets/trustpiloit.png";
 import Button from "./Button/Button";
@@ -31,8 +32,12 @@ const Navbar = () => {
           {/* Right section: Desktop Trust + Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <img src={Trust} alt="Trust" className="h-8 w-auto sm:h-10" />
-            <Button variant="hollow">Login</Button>
-            <Button variant="filled">Signup</Button>
+            <Link to="/login">
+              <Button variant="hollow">Login</Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="filled">Signup</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -73,8 +78,12 @@ const Navbar = () => {
 
             {/* Buttons */}
             <div className="flex flex-col gap-3">
-              <Button variant="filled">Login</Button>
-              <Button variant="hollow">Signup</Button>
+              <Link to="/login" onClick={() => setMenuOpen(false)}>
+                <Button variant="filled">Login</Button>
+              </Link>
+              <Link to="/signup" onClick={() => setMenuOpen(false)}>
+                <Button variant="hollow">Signup</Button>
+              </Link>
             </div>
           </div>
         </div>
