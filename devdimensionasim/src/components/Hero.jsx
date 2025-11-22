@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import HeroLady from '../assets/hero_lady.png'
 const Hero = () => {
   const [formData, setFormData] = useState({
@@ -19,13 +20,30 @@ const Hero = () => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
+    
+    // Show success alert
+    Swal.fire({
+      icon: 'success',
+      title: 'Request Submitted!',
+      text: 'We will send you the pricing information via email shortly.',
+      timer: 2000,
+      showConfirmButton: false,
+    });
+    
+    // Reset form after submission
+    setFormData({
+      firstName: '',
+      email: '',
+      mobile: '',
+      agencyEmployees: '',
+    });
   };
 
   return (
     <section className="bg-primary min-h-screen flex items-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
-          {/* Left Section - Content (2/3 width on large screens) */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6 items-center">
+          {/* Left Section - Content (1/2 width on large screens) */}
           <div className="lg:col-span-2 ">
             {/* Brand Name */}
             <div className="text-secondary text-sm font-bold tracking-wide">
@@ -48,9 +66,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Section - Form (1/3 width on large screens) */}
-          <div className="lg:col-span-1 bg-[#ffffff70] shadow-[0px_4px_11px_0px_#657A8B1A] p-5 rounded-md">
-            <div className="bg-white rounded-lg shadow-lg p-2 sm:p-4">
+          {/* Right Section - Form (1/2 width on large screens) */}
+          <div className="lg:col-span-2 bg-[#ffffff70] shadow-[0px_4px_11px_0px_#657A8B1A] p-5 rounded-md">
+            <div className="bg-white rounded-lg shadow-lg p-4 sm:p-4">
               <h2 className="text-secondary text-xl sm:text-2xl font-semibold mb-6">
                 Want to see pricing? We'll email it!
               </h2>

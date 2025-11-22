@@ -30,14 +30,16 @@ const Navbar = () => {
           </div>
 
           {/* Right section: Desktop Trust + Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-6">
             <img src={Trust} alt="Trust" className="h-8 w-auto sm:h-10" />
-            <Link to="/login">
-              <Button variant="hollow">Login</Button>
-            </Link>
-            <Link to="/signup">
-              <Button variant="filled">Signup</Button>
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link to="/login">
+                <Button variant="hollow">Login</Button>
+              </Link>
+              <Link to="/signup">
+                <Button variant="filled">Signup</Button>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
