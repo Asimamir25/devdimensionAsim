@@ -20,9 +20,8 @@ const Task = () => {
   const [allTask, setAllTask] = useState([]);
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
+  const [sortOrder, setSortOrder] = useState('desc');
 
-  // ✅ Load tasks from localStorage on first render
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("tasks")) || [];
     setAllTask(saved);
@@ -30,7 +29,6 @@ const Task = () => {
 
   const onSubmit = (data) => {
     if (editingTaskId) {
-      // Update existing task
       setAllTask((prev) => {
         const updated = prev.map((task) =>
           task.id === editingTaskId
@@ -55,7 +53,6 @@ const Task = () => {
 
       setEditingTaskId(null);
     } else {
-      // Add new task
       const obj = {
         id: Date.now().toString(),
         name: data.title,
@@ -86,7 +83,6 @@ const Task = () => {
     setEditingTaskId(task.id);
     setValue("title", task.name);
     setValue("description", task.description);
-    // Scroll to form
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -127,7 +123,6 @@ const Task = () => {
   const currentUserTasks = useMemo(() => {
     let filtered = allTask.filter((item) => item.uid === currentUser.uid);
 
-    // Apply search filter
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       filtered = filtered.filter(
@@ -137,13 +132,11 @@ const Task = () => {
       );
     }
 
-    // Apply sorting
     if (sortOrder === 'asc') {
       filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortOrder === 'desc') {
       filtered = filtered.sort((a, b) => b.name.localeCompare(a.name));
     } else {
-      // Default: sort by creation date (newest first)
       filtered = filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     }
 
@@ -157,9 +150,7 @@ const Task = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Form Card */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          {/* Header */}
           <div className="text-center mb-6">
             <h1 className="text-3xl font-bold text-secondary mb-2">
               {editingTaskId ? "Edit Task" : "Add Task"}
@@ -168,7 +159,6 @@ const Task = () => {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {/* Title */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Task Title
@@ -183,7 +173,6 @@ const Task = () => {
               )}
             </div>
 
-            {/* Description */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Task Description
@@ -201,7 +190,6 @@ const Task = () => {
               )}
             </div>
 
-            {/* Form Actions */}
             <div className="flex gap-3">
               <Button variant="filled" type="submit" className="flex-1">
                 {editingTaskId ? "Update Task" : "Add Task"}
@@ -219,7 +207,6 @@ const Task = () => {
           </form>
         </div>
 
-        {/* Tasks List */}
         <div className="space-y-4">
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
@@ -235,10 +222,8 @@ const Task = () => {
               </Button>
             </div>
 
-            {/* Search and Sort Controls */}
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-4">
-                {/* Search Input */}
                 <div className="flex-1">
                   <input
                     type="text"
@@ -249,7 +234,6 @@ const Task = () => {
                   />
                 </div>
 
-                {/* Sort Button */}
                 <Button
                   variant="hollow"
                   onClick={handleSortToggle}
@@ -272,7 +256,6 @@ const Task = () => {
                 </Button>
               </div>
 
-              {/* Results Count */}
               {searchTerm && (
                 <p className="text-sm text-gray-600">
                   Found {currentUserTasks.length} task{currentUserTasks.length !== 1 ? 's' : ''} matching your search

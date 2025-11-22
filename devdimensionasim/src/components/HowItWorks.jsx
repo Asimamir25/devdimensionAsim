@@ -10,21 +10,16 @@ const HowItWorks = () => {
   return (
     <section className="bg-white py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Top Section - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-4 lg:gap-6 mb-4 lg:mb-6 items-start">
-          {/* Left Column - Text Content */}
           <div className="space-y-3 sm:space-y-4 order-1 lg:order-1">
-            {/* Label */}
             <div className="text-primary text-xs sm:text-sm font-bold tracking-wider uppercase">
               HOW IT WORKS
             </div>
 
-            {/* Main Headline */}
             <h2 className="text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-tight">
               Hand-curated Auto/Home Leads - Delivered to you digitally, exclusively.
             </h2>
 
-            {/* First Two Paragraphs in Left Column */}
             <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base leading-normal">
               <p>
                 Most lead vendors fall into one of two categories: they either have high quality at an expensive low volume, or high volume and low quality. ProspectRoute has spent hundreds of thousands of dollars to develop the next generation in insurance marketing: a high volume system that delivers prospects that close.
@@ -36,7 +31,6 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Right Column - Illustration */}
           <div className="flex items-start justify-center lg:justify-end order-2 lg:order-2">
             <div className="w-full max-w-xs sm:max-w-sm lg:max-w-md">
               <img 
@@ -48,10 +42,8 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        {/* Body Text Section - Two Column Layout Below Image */}
         {isExpanded && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 lg:mb-6">
-            {/* Left Column - Text Content */}
             <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base leading-normal">
             
 
@@ -64,7 +56,6 @@ const HowItWorks = () => {
               </p>
             </div>
 
-            {/* Right Column - Text Content */}
             <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base leading-normal">
               <p>
                 The PR-CRM prioritizes calls in many ways but what really makes it amazing when it's used with ProspectRoute. This is because when PR generates a lead, the PR-CRM immediately connects your producer with the prospect by phone when it comes in. This means it's the fastest way to get prospects on the phone. For each minute that passes from when a prospect expresses interest and a producer makes their first contact attempt, the likelihood of a sale decreases by 50%. Using PR with the PR-CRM.
@@ -77,7 +68,6 @@ const HowItWorks = () => {
           </div>
         )}
 
-        {/* Bottom Section - Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6">
           <button
             onClick={toggleExpand}

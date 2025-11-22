@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
-import HeroLady from '../assets/hero_lady.png'
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import HeroLady from "../assets/hero_lady.png";
 const Hero = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    email: '',
-    mobile: '',
-    agencyEmployees: '',
+    firstName: "",
+    email: "",
+    mobile: "",
+    agencyEmployees: "",
   });
 
   const handleChange = (e) => {
@@ -18,24 +18,21 @@ const Hero = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    
-    // Show success alert
+    console.log("Form submitted:", formData);
+
     Swal.fire({
-      icon: 'success',
-      title: 'Request Submitted!',
-      text: 'We will send you the pricing information via email shortly.',
+      icon: "success",
+      title: "Request Submitted!",
+      text: "We will send you the pricing information via email shortly.",
       timer: 2000,
       showConfirmButton: false,
     });
-    
-    // Reset form after submission
+
     setFormData({
-      firstName: '',
-      email: '',
-      mobile: '',
-      agencyEmployees: '',
+      firstName: "",
+      email: "",
+      mobile: "",
+      agencyEmployees: "",
     });
   };
 
@@ -43,30 +40,24 @@ const Hero = () => {
     <section className="bg-primary min-h-screen flex items-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6 items-center">
-          {/* Left Section - Content (1/2 width on large screens) */}
           <div className="lg:col-span-2 ">
-            {/* Brand Name */}
             <div className="text-secondary text-sm font-bold tracking-wide">
               PROSPECTROUTE
             </div>
 
-            {/* Main Headline */}
             <h1 className="text-secondary text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               High volume, pristine, exclusive leads.
             </h1>
 
-            {/* Sub-headline */}
             <p className="text-secondary text-lg sm:text-xl opacity-90">
               Up to 50 web leads per day, exclusive and high quality.
             </p>
 
-            {/* Illustration - Simple line art of person at desk */}
             <div className="mt-8 max-w-md">
-            <img src={HeroLady} alt="" />
+              <img src={HeroLady} alt="" />
             </div>
           </div>
 
-          {/* Right Section - Form (1/2 width on large screens) */}
           <div className="lg:col-span-2 bg-[#ffffff70] shadow-[0px_4px_11px_0px_#657A8B1A] p-5 rounded-md">
             <div className="bg-white rounded-lg shadow-lg p-4 sm:p-4">
               <h2 className="text-secondary text-xl sm:text-2xl font-semibold mb-6">
@@ -74,9 +65,11 @@ const Hero = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* First Name */}
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     First name
                   </label>
                   <input
@@ -90,9 +83,11 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email
                   </label>
                   <input
@@ -106,9 +101,11 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Mobile */}
                 <div>
-                  <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="mobile"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Mobile (used as password)
                   </label>
                   <input
@@ -122,9 +119,11 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Agency Employees Dropdown */}
                 <div>
-                  <label htmlFor="agencyEmployees" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="agencyEmployees"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Agency employees
                   </label>
                   <select
@@ -143,7 +142,6 @@ const Hero = () => {
                   </select>
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-full bg-secondary text-white py-3 px-6 rounded-md font-semibold hover:opacity-90 transition-opacity mt-6"
@@ -160,4 +158,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -49,7 +49,6 @@ const Users = () => {
     navigate('/task')
   }
 
-  // Calculate pagination
   const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
   const startIndex = (currentPage - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
@@ -63,7 +62,6 @@ const Users = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-6">
-          {/* Card 1: Authenticated User Info */}
           <div className="bg-white shadow rounded-lg p-6">
             <h1 className="text-2xl font-bold text-secondary mb-4">User Account</h1>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -95,14 +93,11 @@ const Users = () => {
             </div>
           </div>
 
-          {/* Card 2: Users Search and List */}
           <div className="bg-white shadow rounded-lg p-6">
             <h2 className="text-2xl font-bold text-secondary mb-6">Users List</h2>
 
-            {/* Search and Sort Controls */}
             <div className="mb-6 space-y-4">
               <div className="flex flex-col sm:flex-row gap-4">
-                {/* Search Input */}
                 <div className="flex-1">
                   <input
                     type="text"
@@ -113,7 +108,6 @@ const Users = () => {
                   />
                 </div>
 
-                {/* Sort Button */}
                 <Button
                   variant="hollow"
                   onClick={handleSortToggle}
@@ -136,13 +130,11 @@ const Users = () => {
                 </Button>
               </div>
 
-              {/* Results Count */}
               <p className="text-sm text-gray-600">
                 Showing {currentUsers.length} of {filteredUsers.length} users
               </p>
             </div>
 
-            {/* Loading State */}
             {loading && (
               <div className="text-center py-12">
                 <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-secondary"></div>
@@ -150,7 +142,6 @@ const Users = () => {
               </div>
             )}
 
-            {/* Error State */}
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md mb-6">
                 <p className="font-semibold">Error loading users:</p>
@@ -165,7 +156,6 @@ const Users = () => {
               </div>
             )}
 
-            {/* Users Table */}
             {!loading && !error && (
               <>
                 <div className="overflow-x-auto">
@@ -205,7 +195,6 @@ const Users = () => {
                   </table>
                 </div>
 
-                {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="mt-6 flex items-center justify-between">
                     <div className="text-sm text-gray-600">
@@ -222,7 +211,6 @@ const Users = () => {
                       </Button>
                       {[...Array(totalPages)].map((_, index) => {
                         const page = index + 1;
-                        // Show first page, last page, current page, and pages around current
                         if (
                           page === 1 ||
                           page === totalPages ||

@@ -6,11 +6,8 @@ const Footer = () => {
   return (
     <footer className="bg-primary py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
-          {/* Left Section - Logo and Contact */}
           <div>
-            {/* Logo */}
             <div className="mb-6">
               <img
                 src={Logo}
@@ -22,7 +19,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Contact Information */}
             <div className="space-y-3 text-secondary text-sm">
               <div className="flex items-start gap-2">
                 <svg
@@ -44,13 +40,11 @@ const Footer = () => {
                 </svg>
                 <div>
                   <div>Iqbal Town,Lahore</div>
-                  
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Second Section - Navigation Links */}
           <div className="flex justify-between gap-10">
             <div>
               <ul className="space-y-3 text-secondary text-sm">
@@ -62,7 +56,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Third Section - More Links */}
             <div>
               <ul className="space-y-3 text-secondary text-sm">
                 <li className="hover:opacity-80 cursor-pointer">Pricing</li>
@@ -76,12 +69,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Section - Trustpilot */}
           <div>
             <div className="mb-4">
               <img src={Trust} alt="Trustpilot" className="h-8 w-auto" />
             </div>
-            {/* Stars */}
+
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <svg
@@ -98,7 +90,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-secondary border-opacity-20 pt-6 mt-8">
           <div className="text-secondary text-sm text-center">
             © AsimDev 2025 All Rights Reserved.

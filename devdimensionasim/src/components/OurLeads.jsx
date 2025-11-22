@@ -16,24 +16,19 @@ const OurLeads = () => {
     <section className="bg-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Card 1 */}
           <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-            {/* Yellow line at top */}
             <div className="h-1 bg-primary rounded-t-lg"></div>
 
             <div className="p-6 sm:p-8">
-              {/* Label */}
               <div className="text-primary text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
                 OUR LEADS
               </div>
 
-              {/* Warning Message */}
               <h2 className="text-secondary text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
                 Get double the return on your marketing dollars. Best of all,
                 the PR-CRM is free.
               </h2>
 
-              {/* Body Text */}
               {isExpanded1 && (
                 <div className="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
                   <p>
@@ -80,7 +75,6 @@ const OurLeads = () => {
                 </div>
               )}
 
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={toggleExpand1}
@@ -130,24 +124,19 @@ const OurLeads = () => {
             </div>
           </div>
 
-          {/* Card 2 - Similar structure */}
           <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-            {/* Yellow line at top */}
             <div className="h-1 bg-primary rounded-t-lg"></div>
 
             <div className="p-6 sm:p-8">
-              {/* Label */}
               <div className="text-primary text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
                 OUR LEADS
               </div>
 
-              {/* Warning Message */}
               <h2 className="text-secondary text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
                 WARNING: Our leads may cause a sense of euphoria, relief, or
                 satisfaction. Seek medical attention.
               </h2>
 
-              {/* Body Text */}
               {isExpanded2 && (
                 <div className="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
                   <p>
@@ -181,7 +170,6 @@ const OurLeads = () => {
                 </div>
               )}
 
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={toggleExpand2}

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Async thunk to fetch users from API
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
   async (_, { rejectWithValue }) => {
@@ -25,22 +24,20 @@ const usersSlice = createSlice({
     loading: false,
     error: null,
     searchTerm: '',
-    sortOrder: 'asc', // 'asc' or 'desc'
+    sortOrder: 'asc',
     currentPage: 1,
     usersPerPage: 5,
   },
   reducers: {
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
-      state.currentPage = 1; // Reset to first page on search
-      // Filter users based on search term
+      state.currentPage = 1;
       const term = action.payload.toLowerCase();
       let filtered = state.users.filter(
         (user) =>
           user.name.toLowerCase().includes(term) ||
           user.email.toLowerCase().includes(term)
       );
-      // Apply current sort order
       filtered = filtered.sort((a, b) => {
         const nameA = a.name.toLowerCase();
         const nameB = b.name.toLowerCase();
@@ -54,7 +51,6 @@ const usersSlice = createSlice({
     },
     setSortOrder: (state, action) => {
       state.sortOrder = action.payload;
-      // Sort filtered users
       state.filteredUsers = [...state.filteredUsers].sort((a, b) => {
         const nameA = a.name.toLowerCase();
         const nameB = b.name.toLowerCase();
@@ -78,14 +74,12 @@ const usersSlice = createSlice({
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.loading = false;
         state.users = action.payload;
-        // Filter and sort based on current search term and sort order
         const term = state.searchTerm.toLowerCase();
         let filtered = state.users.filter(
           (user) =>
             user.name.toLowerCase().includes(term) ||
             user.email.toLowerCase().includes(term)
         );
-        // Apply current sort order
         filtered = filtered.sort((a, b) => {
           const nameA = a.name.toLowerCase();
           const nameB = b.name.toLowerCase();
