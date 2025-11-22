@@ -73,14 +73,14 @@ const Pricing = () => {
           {pricingPlans.map((plan) => (
             <div
               key={plan.id}
-              className="rounded-lg p-6 sm:p-8 flex flex-col"
+              className="rounded-lg   flex flex-col"
               style={{
                 border: '1px solid #DFE7EF',
                 boxShadow: '0px 4px 11px 0px #657A8B1A'
               }}
             >
               {/* Header */}
-              <div className="text-center mb-6">
+              <div className="text-center mt-3 mb-6">
                 <div className="text-secondary text-xl sm:text-2xl font-bold">
                   {plan.callsNumber}
                 </div>
@@ -91,7 +91,7 @@ const Pricing = () => {
 
               {/* Features List */}
               <div 
-                className="flex-1] mb-6 rounded-md"
+                className="flex-1 "
                 style={{
                   backgroundColor: '#FFFFFF',
                   borderTop: '1px solid #DFE7EF',
@@ -114,12 +114,12 @@ const Pricing = () => {
               </div>
 
               {/* Price and Button Container */}
-              <div className="rounded-md" style={{ backgroundColor: '#F7F8F9' }}>
+              <div className="" style={{ backgroundColor: '#F7F8F9' }}>
                 <div className="py-4 px-4">
                   {/* Price */}
                   <div className="text-center mb-4">
                     <div className="text-secondary text-2xl sm:text-3xl font-bold">
-                      {plan.price} Per week
+                      {plan.price} <span className=' text-normal font-normal text-lightblue'> Per week</span>
                     </div>
                   </div>
 

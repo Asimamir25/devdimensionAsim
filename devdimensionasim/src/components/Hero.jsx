@@ -24,9 +24,9 @@ const Hero = () => {
   return (
     <section className="bg-primary min-h-screen flex items-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
           {/* Left Section - Content (2/3 width on large screens) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 ">
             {/* Brand Name */}
             <div className="text-secondary text-sm font-bold tracking-wide">
               PROSPECTROUTE
@@ -49,8 +49,8 @@ const Hero = () => {
           </div>
 
           {/* Right Section - Form (1/3 width on large screens) */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div className="lg:col-span-1 bg-[#ffffff70] shadow-[0px_4px_11px_0px_#657A8B1A] p-5 rounded-md">
+            <div className="bg-white rounded-lg shadow-lg p-2 sm:p-4">
               <h2 className="text-secondary text-xl sm:text-2xl font-semibold mb-6">
                 Want to see pricing? We'll email it!
               </h2>
@@ -65,7 +65,7 @@ const Hero = () => {
                     type="text"
                     id="firstName"
                     name="firstName"
-                    placeholder="Type..."
+                    placeholder="Ali"
                     value={formData.firstName}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
@@ -81,7 +81,7 @@ const Hero = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Type..."
+                    placeholder="devdimension@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
@@ -97,7 +97,7 @@ const Hero = () => {
                     type="tel"
                     id="mobile"
                     name="mobile"
-                    placeholder="Type..."
+                    placeholder="+923136754445"
                     value={formData.mobile}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
